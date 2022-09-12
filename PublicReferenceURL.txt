@@ -1,0 +1,81 @@
+> [Suggested description]
+> A critical vulnerability was found on Enlightenment window manager
+> version 0.25.3-1 that can be used to escalate privileges and have a
+> root shell. The affected component is the SUID binary
+> enlightenment_sys, which contains a Command Injection that can lead to
+> Arbitrary Command Execution as root.
+>
+> ------------------------------------------
+>
+> [Additional Information]
+> The PoC:
+>
+> ?  sec id
+> uid=1000(maher) gid=1000(maher) groups=1000(maher),4(adm),24(cdrom),27(sudo),30(dip),34(backup),46(plugdev),122(lpadmin),134(lxd),135(sambashare),138(libvirt)
+> ?  sec ./exploit_script.sh
+> mount: /dev/../tmp/: can't find in /etc/fstab.
+> # id
+> uid=0(root) gid=0(root) groups=0(root),4(adm),24(cdrom),27(sudo),30(dip),34(backup),46(plugdev),122(lpadmin),134(lxd),135(sambashare),138(libvirt),1000(maher)
+> #
+>
+> ------------------------------------------
+>
+> [VulnerabilityType Other]
+> Command Injection
+>
+> ------------------------------------------
+>
+> [Vendor of Product]
+> Enlightenment
+>
+> ------------------------------------------
+>
+> [Affected Product Code Base]
+> enlightenment_sys - 0.25.3-1
+>
+> ------------------------------------------
+>
+> [Affected Component]
+> enlightenment_sys
+>
+> ------------------------------------------
+>
+> [Attack Type]
+> Local
+>
+> ------------------------------------------
+>
+> [Impact Code execution]
+> true
+>
+> ------------------------------------------
+>
+> [Impact Denial of Service]
+> true
+>
+> ------------------------------------------
+>
+> [Impact Escalation of Privileges]
+> true
+>
+> ------------------------------------------
+>
+> [Impact Information Disclosure]
+> true
+>
+> ------------------------------------------
+>
+> [Attack Vectors]
+> To exploit the vulnerability Enlightenment window manager should be installed on the system.
+>
+> ------------------------------------------
+>
+> [Reference]
+> https://www.enlightenment.org/
+>
+> ------------------------------------------
+>
+> [Discoverer]
+> Maher Azzouzi
+
+Use CVE-2022-37706.
